@@ -1,7 +1,7 @@
 class MinStack {
     
     // the minStack data structure maintains that for top element of the stack it's the minimum integer
-    // everytime a new min int is added to the stack it is compared to the previous min and put at the top
+    // every time a new min int is added to the stack it is compared to the previous min and put at the top
     private Stack<int[]> stack = new Stack();
     
     public MinStack() {
