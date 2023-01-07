@@ -1,19 +1,16 @@
 class Solution {
     public int[] getConcatenation(int[] nums) {
         
-        int[] nums2 = new int[nums.length * 2];
+        // create an array with double the length of the input array
+        // copy the elements from 0 to len and at (0 + len) to the end of result array
+        // this results in nums array being copied twice
         
-        for(int i = 0; i < nums.length; i++) {
-            nums2[i] = nums[i];
-            
+        int len = nums.length;
+        int[] result = new int[len * 2];
+        
+        for(int i = 0; i < len; i++) {
+            result[i] = result[i + len] = nums[i];
         }
-        
-        int i = 0;
-        for(int j = nums.length; j < nums2.length; j++) {
-            nums2[j] = nums[i];
-            i++;
-        }
-        
-        return nums2;
+        return result;
     }
 }
